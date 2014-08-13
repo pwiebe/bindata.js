@@ -23,7 +23,7 @@ BinData.DataType = class DataType
 
   readFormat: (format, data) ->
     file = new File(data)
-    @data = file.readf format
+    @data = file.readf @e + format
 
   assign: (value) -> @data = value
   clear: -> @data = @opts.initialValue
