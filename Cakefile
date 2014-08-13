@@ -16,7 +16,7 @@ depsDir        = "deps"
 targetCoffee  = "#{csSrcDir}/build"
 
 targetCoreJS      = "#{csTargetDir}/#{targetName}.js"
-coffeeCoreOpts    = "-r coffeescript-growl -j #{targetName}.js -o #{csTargetDir} -c #{targetCoffee}.coffee"
+coffeeCoreOpts    = "-j #{targetName}.js -o #{csTargetDir} -c #{targetCoffee}.coffee"
 
 # All source files listed in include order
 coffeeFiles   = [
