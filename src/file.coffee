@@ -12,10 +12,13 @@ BinData.File = class File
     # Track our current position in the file data. This is analogous to the
     # file pointer in C.
     @pos = 0
+    @len = @data.length
 
   # Get the current position in the file. This is here to parallel the C method
   tell: -> @pos
 
+  eof: -> @pos >= @len
+  
   # Read one or more bytes from the file. Note that this moves the file pointer
   # forward the number of bytes specified.
   read: (bytes) -> (@data[@pos++] for i in [0...bytes])
