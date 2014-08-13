@@ -39,7 +39,7 @@
     _.extend opts, endian: @endian
 
     item = new BinData.Type[type] opts
-    item.read @file.read(item.numBytes(@_data))
+    item.read @file  # @file.read(item.numBytes(@_data))
     @setData name, item.snapshot()
 
   pad: (bytes) -> @file.read bytes

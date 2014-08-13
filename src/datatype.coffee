@@ -21,8 +21,8 @@ BinData.DataType = class DataType
   # This does nothing by default. Override it.
   read: (data) -> @data = data
 
-  readFormat: (format, data) ->
-    file = new File(data)
+  readFormat: (format, file) ->
+    #file = new File(data)
     @data = file.readf @e + format
 
   assign: (value) -> @data = value

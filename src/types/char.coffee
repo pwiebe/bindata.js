@@ -2,12 +2,12 @@ class BinData.Type.Char extends BinData.DataType
   opts:
     unsigned: false
 
-  read: (data) ->
+  read: (file) ->
     code = switch @opts.unsigned
       when true then "B"
       else "b"
 
-    @readFormat code, data
+    @readFormat code, file
 
   numBytes: -> 1
 
