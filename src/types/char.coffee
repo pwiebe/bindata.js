@@ -11,8 +11,8 @@ class BinData.Type.Char extends BinData.DataType
 
   numBytes: -> 1
 
-BinData.Record.registerType ["char", "int8"], (name) -> 
-  @readType "Bool", name
+BinData.Record.registerType ["char", "int8"], (name, opts = {}) -> 
+  @readType "Char", name, opts
 
-BinData.Record.registerType ["uchar", "uint8"], (name) -> 
-  @readType "Bool", name, unsigned: true
+BinData.Record.registerType ["uchar", "uint8"], (name, opts = {}) -> 
+  @readType "Char", name, unsigned: true
