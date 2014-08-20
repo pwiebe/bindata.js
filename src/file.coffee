@@ -3,10 +3,7 @@
 # variable instead of read from disk. A lot of these functions are from C,
 # but some of them are helper functions to make things a bit easier to
 # understand.
-BinData.File = class File
-  @open: (path) ->
-    data = fs.readFileSync path
-    new File(data)
+BinData.BinFile = class BinFile
 
   constructor: (@data) ->
     # Track our current position in the file data. This is analogous to the
@@ -18,7 +15,7 @@ BinData.File = class File
   tell: -> @pos
 
   eof: -> @pos >= @len
-  
+
   # Read one or more bytes from the file. Note that this moves the file pointer
   # forward the number of bytes specified.
   read: (bytes) -> (@data[@pos++] for i in [0...bytes])
